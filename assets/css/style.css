@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    height: 100vh;
+    --background-color: #D3E1F7;
+    --surface-color: rgb(235, 240, 250);
+    --primary-color: rgb(132, 189, 235);
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.container {
+    height: 100%;
+    max-height: 667px;
+    max-width: 375px;
+    box-sizing: border-box;
+    border-radius: 35px;
+    box-shadow: 5px 5px 40px;
+    background: linear-gradient(var(--surface-color), rgb(238, 240, 248));
+    display: grid;
+    grid-template-rows: 80px auto 85px 70px 170px;
+                   
+    grid-template-columns:  120px auto 120px;
+
+    grid-template-areas:    "top-left       top-middle      top-right"
+                            "album-cover    album-cover      album-cover"
+                            "song-title      song-title       song-title"
+                            "song-progress   song-progress    song-progress"
+                            "bottom-left      bottom-middle   bottom-right";
+}
+
+    
+
+.top-left {
+    grid-area: top-left;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-middle {
+    grid-area: top-middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-right {
+    grid-area: top-right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.album-cover {
+    grid-area: album-cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.record-outer {
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    border: solid var(--surface-cover);
+    background: var(--surface-color);
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+                /* -10px -10px 30px rgba(225 225,225,0.8);  */
+    display:grid;
+    
+}
+
+.record-inner {
+    height: 95%;
+    width: 95%;
+    margin: auto;
+    border-radius: 50%;
+    background-image: url(https://source.unsplash.com/random/220x220);
+    animation-name: spin;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.song-title {
+    grid-area: song-title;
+    text-align: center;
+    color: rgb(68, 70, 77);
+}
+
+.song-progress {
+    grid-area: song-progress;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.bottom-left {
+    grid-area: bottom-left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-right {
+    grid-area: bottom-right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-middle{
+    grid-area: bottom-middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-active {
+    width: 68px;
+    height: 68px;
+    border: var(--primary-color) solid 3px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    box-shadow: inset 10px 10px 10px rgb(130, 161, 197),
+                inset -3px -3px 10px rgb(176, 200, 243);
+}
+
+.button-rewind {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: solid var(--surface-cover);
+    background: var(--surface-color);
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+}
+
+.button-forward {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: solid var(--surface-cover);
+    background: var(--surface-color);
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+}
+
+.button-back {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: solid var(--surface-color);
+    background: var(--surface-color);
+    box-shadow:  7px 7px 19px #c9cfd8, 
+                 -7px -7px 19px #f5fdff;
+}
+
+.button-nav {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: solid var(--surface-color);
+    background: var(--surface-color);
+    box-shadow:  7px 7px 19px #c9cfd8, 
+                 -7px -7px 19px #f5fdff;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
